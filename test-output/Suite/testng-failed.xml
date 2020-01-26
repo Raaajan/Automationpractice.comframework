@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="testLibrary.ExistingCustomerSignInTest">
+        <methods>
+          <include name="f"/>
+        </methods>
+      </class> <!-- testLibrary.ExistingCustomerSignInTest -->
+      <class name="testLibrary.AddWishListTest">
+        <methods>
+          <include name="enterWishList"/>
+          <include name="verifyWishList"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- testLibrary.AddWishListTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
