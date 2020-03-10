@@ -17,6 +17,9 @@ public class ExistingCustomerSignIn extends Base {
 
 	@FindBy(id = "SubmitLogin")
 	WebElement submit;
+	
+	@FindBy(linkText = "Sign out")
+	WebElement signout;
 
 	// Initialise pagefactory
 
@@ -41,4 +44,7 @@ public class ExistingCustomerSignIn extends Base {
 		submit.click();
 	}
 
+	public void clickSignoutbtn() {
+		signout.click();
+	}
 }
