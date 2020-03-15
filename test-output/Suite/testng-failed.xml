@@ -3,18 +3,26 @@
 <suite name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="testLibrary.ExistingCustomerSignInTest">
+      <class name="testLibrary.CreateLoginTest">
         <methods>
-          <include name="f"/>
+          <include name="openpage"/>
+          <include name="createnewaccount"/>
+          <include name="verifylogincreatepage"/>
         </methods>
-      </class> <!-- testLibrary.ExistingCustomerSignInTest -->
-      <class name="testLibrary.AddWishListTest">
+      </class> <!-- testLibrary.CreateLoginTest -->
+      <class name="testLibrary.VerifyaccountcreatedTest">
         <methods>
-          <include name="enterWishList"/>
-          <include name="verifyWishList"/>
+          <include name="verifypersonalinfo"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- testLibrary.AddWishListTest -->
+      </class> <!-- testLibrary.VerifyaccountcreatedTest -->
+      <class name="testLibrary.CreatenewaccountTest">
+        <methods>
+          <include name="clickregisterbutton"/>
+          <include name="beforeTest"/>
+          <include name="Createnewaccountdetails"/>
+        </methods>
+      </class> <!-- testLibrary.CreatenewaccountTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

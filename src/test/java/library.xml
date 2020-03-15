@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="false">
-  <test name="Test">
+
+<suite name="Functional Smoke Jenkins suite" parallel="false" thread-count="5" verbose="8">
+
+<test name="test name FIRST">
     <classes>
-      <class name="testLibrary.ExistingCustomerSignInTest"/>
-      <class name="testLibrary.AddWishListTest"/>
+        <class name="testLibrary.ExistingCustomerSignInTest"/>
     </classes>
-  </test> <!-- Test -->
+</test>
+<test name="test name second">
+    <classes>
+        <class name="testLibrary.VerifyaccountcreatedTest"/>
+    </classes>
+</test>
 </suite> <!-- Suite -->
