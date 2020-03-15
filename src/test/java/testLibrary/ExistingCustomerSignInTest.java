@@ -27,18 +27,18 @@ public class ExistingCustomerSignInTest extends Base {
 	public void ExistingSignIn() 
 	{
 		signin.clickSignInbtn();
-		signin.enterEmail("rajandube@gmail.com");
+		signin.enterEmail(" ");
 		signin.enterpassword("Rajan@123");
 		signin.clickSubmitbtn();
 		log.info("Sign in done");
 	}
 
 	@AfterTest
-	public void afterTest() {
-		signin.clickSignoutbtn();
+	public void signout() {
+		/*signin.clickSignoutbtn();
 		log.info("Sign out done");
 		driver.close();
-		log.info("driver closed");
+		log.info("driver closed");*/
 	}
 
 }

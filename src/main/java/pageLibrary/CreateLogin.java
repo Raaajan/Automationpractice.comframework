@@ -17,6 +17,9 @@ public class CreateLogin extends Base {
 	@FindBy(id="SubmitCreate")
 	WebElement createaccountbtn;
 	
+	@FindBy(xpath="//*[text()='Your personal information']")
+	WebElement personalinfomationText;
+	
 	//Initialise pagefactory
 	
 	public CreateLogin()
@@ -41,7 +44,8 @@ public class CreateLogin extends Base {
 	
 	public String verifyLogincreatepage()
 	{
-		String createaccttext = driver.findElement(By.xpath("//*[text()='Your personal information']")).getText();
+		//String createaccttext = driver.findElement(By.xpath("//*[text()='Your personal information']")).getText();
+		String createaccttext = personalinfomationText.getText();
 		return createaccttext;
 	}
 	

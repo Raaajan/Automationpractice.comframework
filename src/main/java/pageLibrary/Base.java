@@ -13,7 +13,7 @@ public class Base
   {
 	Logger log = Logger.getLogger("Base");
 	PropertyConfigurator.configure(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\log4j.properties");   
-	log.info("Logger intialised");
+	log.info("Logger initialised");
 	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\java\\drivers\\chromedriver.exe");
 	driver = new ChromeDriver();
 	log.info("Opening Browser");

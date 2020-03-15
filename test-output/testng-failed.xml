@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite verbose="8" name="Failed suite [Functional Smoke Jenkins suite]">
+  <test name="test name second(failed)">
     <classes>
+      <class name="testLibrary.VerifyaccountcreatedTest">
+        <methods>
+          <include name="personalinfo"/>
+          <include name="verifypersonalinfo"/>
+        </methods>
+      </class> <!-- testLibrary.VerifyaccountcreatedTest -->
       <class name="testLibrary.ExistingCustomerSignInTest">
         <methods>
-          <include name="ExistingSignIn"/>
           <include name="openpage"/>
-          <include name="afterTest"/>
+          <include name="signout"/>
         </methods>
       </class> <!-- testLibrary.ExistingCustomerSignInTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- test name second(failed) -->
+</suite> <!-- Failed suite [Functional Smoke Jenkins suite] -->

@@ -20,13 +20,12 @@ public class AddWishListTest extends Base {
 	Object[] orgitem;
 
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void addwishlist() throws InterruptedException {
 		existingsign = new ExistingCustomerSignInTest();
 		existingsign.openpage();
 		existingsign.ExistingSignIn();
 		wishlist = new AddWishList();
 		Thread.sleep(2000);
-
 	}
 	
 	@Test(priority = 0)
@@ -59,11 +58,6 @@ public class AddWishListTest extends Base {
 			System.out.println("listitem = " + listitem);
 			assertEquals(itementered, listitem);
 		}
-	}
-
-	@AfterTest
-	public void afterTest() {
-
 	}
 
 }
