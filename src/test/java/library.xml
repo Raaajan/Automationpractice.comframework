@@ -2,6 +2,10 @@
 
 <suite name="Functional Smoke Jenkins suite" parallel="false" thread-count="5" verbose="8">
 
+<listeners>
+<listener class-name = "pageLibrary.ExtentReporterNG" />
+</listeners>
+
 <test name="test name FIRST">
     <classes>
         <class name="testLibrary.ExistingCustomerSignInTest"/>
@@ -12,4 +16,5 @@
         <class name="testLibrary.VerifyaccountcreatedTest"/>
     </classes>
 </test>
+
 </suite> <!-- Suite -->

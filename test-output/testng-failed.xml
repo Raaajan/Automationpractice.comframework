@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="8" name="Failed suite [Functional Smoke Jenkins suite]">
+  <test name="test name FIRST(failed)">
+    <classes>
+      <class name="pageLibrary.Extent">
+        <methods>
+          <include name="endreport"/>
+          <include name="startReport"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pageLibrary.Extent -->
+      <class name="testLibrary.VerifyaccountcreatedTest">
+        <methods>
+          <include name="personalinfo"/>
+        </methods>
+      </class> <!-- testLibrary.VerifyaccountcreatedTest -->
+      <class name="testLibrary.ExistingCustomerSignInTest">
+        <methods>
+          <include name="ExistingSignIn"/>
+          <include name="openpage"/>
+          <include name="signout"/>
+        </methods>
+      </class> <!-- testLibrary.ExistingCustomerSignInTest -->
+    </classes>
+  </test> <!-- test name FIRST(failed) -->
   <test name="test name second(failed)">
     <classes>
+      <class name="pageLibrary.Extent">
+        <methods>
+          <include name="endreport"/>
+          <include name="startReport"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pageLibrary.Extent -->
       <class name="testLibrary.VerifyaccountcreatedTest">
         <methods>
           <include name="personalinfo"/>
@@ -17,4 +47,27 @@
       </class> <!-- testLibrary.ExistingCustomerSignInTest -->
     </classes>
   </test> <!-- test name second(failed) -->
+  <test name="report(failed)">
+    <classes>
+      <class name="pageLibrary.Extent">
+        <methods>
+          <include name="endreport"/>
+          <include name="demoReportFail"/>
+          <include name="startReport"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pageLibrary.Extent -->
+      <class name="testLibrary.VerifyaccountcreatedTest">
+        <methods>
+          <include name="personalinfo"/>
+        </methods>
+      </class> <!-- testLibrary.VerifyaccountcreatedTest -->
+      <class name="testLibrary.ExistingCustomerSignInTest">
+        <methods>
+          <include name="openpage"/>
+          <include name="signout"/>
+        </methods>
+      </class> <!-- testLibrary.ExistingCustomerSignInTest -->
+    </classes>
+  </test> <!-- report(failed) -->
 </suite> <!-- Failed suite [Functional Smoke Jenkins suite] -->
