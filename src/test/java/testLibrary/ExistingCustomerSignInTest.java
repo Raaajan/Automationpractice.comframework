@@ -27,7 +27,7 @@ public class ExistingCustomerSignInTest extends Base {
 	public void ExistingSignIn() 
 	{
 		signin.clickSignInbtn();
-		signin.enterEmail(" ");
+		signin.enterEmail("rajan.dubey@gmail.com");
 		signin.enterpassword("Rajan@123");
 		signin.clickSubmitbtn();
 		log.info("Sign in done");

@@ -3,12 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testLibrary.VerifyaccountcreatedTest">
+      <class name="pageLibrary.Extent">
         <methods>
-          <include name="verifypersonalinfo"/>
-          <include name="beforeTest"/>
+          <include name="endreport"/>
+          <include name="demoReportFail"/>
+          <include name="startReport"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- testLibrary.VerifyaccountcreatedTest -->
+      </class> <!-- pageLibrary.Extent -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
