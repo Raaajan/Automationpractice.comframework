@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Functional Smoke Jenkins suite" parallel="false" thread-count="5" verbose="8">
+<suite name="TestNG Suite" parallel="false" thread-count="5" verbose="8">
 
 <listeners>
-<listener class-name = "pageLibrary.ExtentReporterNG" />
+<listener class-name = "Utility.ListenerReporter" />
+<listener class-name = "Utility.ExtentReporterNG" />
 </listeners>
 
-<test name="test name FIRST">
+<test name="test name Test1">
     <classes>
-        <class name="testLibrary.ExistingCustomerSignInTest"/>
-    </classes>
-</test>
-<test name="test name second">
-    <classes>
-        <class name="testLibrary.VerifyaccountcreatedTest"/>
+        <class name="testLibrary.CreateLoginTest"/>
+         <class name="testLibrary.CreatenewaccountTest"/>
     </classes>
 </test>
 

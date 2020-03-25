@@ -21,10 +21,10 @@ public class AddWishListTest extends Base {
 
 	@BeforeTest
 	public void addwishlist() throws InterruptedException {
-		existingsign = new ExistingCustomerSignInTest();
+	/*	existingsign = new ExistingCustomerSignInTest();
 		existingsign.openpage();
 		existingsign.ExistingSignIn();
-		wishlist = new AddWishList();
+		wishlist = new AddWishList();*/
 		Thread.sleep(2000);
 	}
 	

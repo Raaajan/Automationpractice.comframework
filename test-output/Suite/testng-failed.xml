@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="testLibrary.CreateLoginTest">
+      <class name="testLibrary.ExistingCustomerSignInTest">
         <methods>
+          <include name="ExistingSignIn"/>
           <include name="openpage"/>
-          <include name="createnewaccount"/>
-          <include name="verifylogincreatepage"/>
         </methods>
-      </class> <!-- testLibrary.CreateLoginTest -->
+      </class> <!-- testLibrary.ExistingCustomerSignInTest -->
       <class name="testLibrary.VerifyaccountcreatedTest">
         <methods>
+          <include name="personalinfo"/>
           <include name="verifypersonalinfo"/>
-          <include name="beforeTest"/>
         </methods>
       </class> <!-- testLibrary.VerifyaccountcreatedTest -->
-      <class name="testLibrary.CreatenewaccountTest">
-        <methods>
-          <include name="clickregisterbutton"/>
-          <include name="beforeTest"/>
-          <include name="Createnewaccountdetails"/>
-        </methods>
-      </class> <!-- testLibrary.CreatenewaccountTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,6 +3,10 @@ package pageLibrary;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import Utility.Helper;
 
 public class ExistingCustomerSignIn extends Base {
 
@@ -17,8 +21,8 @@ public class ExistingCustomerSignIn extends Base {
 
 	@FindBy(id = "SubmitLogin")
 	WebElement submit;
-	
-	@FindBy(linkText = "Sign out")
+
+	@FindBy(xpath = "//a[@class='logout']")
 	WebElement signout;
 
 	// Initialise pagefactory
@@ -32,12 +36,12 @@ public class ExistingCustomerSignIn extends Base {
 	}
 
 	public void enterEmail(String emailadd) {
+		Helper.exwait.until(ExpectedConditions.elementToBeClickable(email));
 		email.sendKeys(emailadd);
 	}
 
 	public void enterpassword(String passwrd) {
 		password.sendKeys(passwrd);
-
 	}
 
 	public void clickSubmitbtn() {
@@ -45,6 +49,7 @@ public class ExistingCustomerSignIn extends Base {
 	}
 
 	public void clickSignoutbtn() {
+		//Helper.exwait.until(ExpectedConditions.elementToBeClickable(signout));
 		signout.click();
 	}
 }

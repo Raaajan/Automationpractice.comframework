@@ -10,7 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import Utility.ExcelReader;
 import pageLibrary.Base;
 import pageLibrary.CreateLogin;
 
@@ -19,6 +22,7 @@ import pageLibrary.CreateLogin;
 public class CreateLoginTest extends Base {
 	int flag =0;
 	CreateLogin login;
+	String sheetName = "Emailcheck";
 	Logger log = Logger.getLogger("CreateLoginTest");
 	@BeforeTest
 	public void openpage()
@@ -29,13 +33,20 @@ public class CreateLoginTest extends Base {
 		
 	}
 	
-	@Test(priority=0)
-	public void createnewaccount() throws InterruptedException 
+	@DataProvider
+	public Object[][] checkemail()
+	{
+		Object[][] data = ExcelReader.getTestData(sheetName);
+		return data;
+	}
+	
+	@Test(priority=0,dataProvider = "checkemail")
+	public void createnewaccount(String email) throws InterruptedException 
 	{
 		login.clickonsigninbtn();
 		WebDriverWait wait = new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.attributeContains(By.name("email_create"), "name", "email_create"));
-		login.enteremailadd("rajannndubbeeyy@gmail.com");
+		login.enteremailadd(email);
 		log.info("email id entered");
 		login.clickoncreatebtn();
 		Thread.sleep(2000);
@@ -62,7 +73,7 @@ public class CreateLoginTest extends Base {
 		
 
 	}
-	@AfterTest
+	/*@AfterTest
 	public void closebrowser()
 	{
 		if(flag==1)
@@ -70,6 +81,6 @@ public class CreateLoginTest extends Base {
 			log.info("Already/Invalid Email exist, Hence closing browser");
 			driver.close();
 		}
-	}
+	}*/
 	
 }
