@@ -23,6 +23,7 @@ public class CreateLoginTest extends Base {
 	int flag =0;
 	CreateLogin login;
 	String sheetName = "Emailcheck";
+	String testcase = "data1";
 	Logger log = Logger.getLogger("CreateLoginTest");
 	@BeforeTest
 	public void openpage()
@@ -36,7 +37,7 @@ public class CreateLoginTest extends Base {
 	@DataProvider
 	public Object[][] checkemail()
 	{
-		Object[][] data = ExcelReader.getTestData(sheetName);
+		Object[][] data = ExcelReader.getTestData(sheetName,testcase);
 		return data;
 	}
 	

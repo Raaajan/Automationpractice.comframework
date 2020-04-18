@@ -21,6 +21,7 @@ public class CreatenewaccountTest extends Base {
 	Logger log = Logger.getLogger("CreatenewaccountTest");
 	createnewaccount newaccount;
 	String sheetName = "CreateAccount";
+	String testcase = "data1";
 
 	@BeforeTest
 	public void newaccount() {
@@ -31,7 +32,7 @@ public class CreatenewaccountTest extends Base {
 	@DataProvider
 	public Object[][] enterdetails()
 	{
-		Object[][] data = ExcelReader.getTestData(sheetName);
+		Object[][] data = ExcelReader.getTestData(sheetName,testcase);
 		return data;
 	}
 	@Test(priority=0,dataProvider="enterdetails")

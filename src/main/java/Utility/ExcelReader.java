@@ -20,6 +20,8 @@ public class ExcelReader extends Base {
 
 	static Workbook book;
 	static Sheet sheet;
+	static int rows;
+	static int columns;
 
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
@@ -44,5 +46,62 @@ public class ExcelReader extends Base {
 		}
 		return data;
 	}
+	
+	public static Object[][] getTestData(String sheetName, String TC) {
+		FileInputStream file = null;
+		try {
+			file = new FileInputStream(TESTDATA_SHEET_PATH);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			book = WorkbookFactory.create(file);
+		} catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		sheet = book.getSheet(sheetName);
+		rows = sheet.getLastRowNum();
+		columns = sheet.getRow(0).getLastCellNum();
+		int index = -1;
+		for(int i=0;i<rows;i++)
+		{
+			String xltstcase = sheet.getRow(i).getCell(0).toString();
+			System.out.println("xltstcase :"+xltstcase);
+			if(xltstcase.equalsIgnoreCase(TC))
+			{
+				index = i;
+				break;
+			}
+		}
+		Object[][] data = new Object[1][columns-1];
+		for (int i = 0; i < 1; i++) {
+			for (int k = 0; k <columns-1; k++) {
+				data[i][k] = sheet.getRow(index).getCell(k+1).toString();
+				System.out.println("i "+i+" k "+k);
+				System.out.println(data[i][k]);
+			}
+		}
+		return data;
+	}
+
+/*	public static void main(String args[])
+	{
+		System.out.println("Execution started");
+		
+		Object[][] a = ExcelReader.getTestData("CreateAccount", "data2");
+		
+		for(int i=0;i<1;i++)
+		{
+			for(int j=1;j<a[i].length;j++)
+			{	
+				System.out.println(a[i][j]);
+			}
+		}
+	}*/
+
 
 }
+
+

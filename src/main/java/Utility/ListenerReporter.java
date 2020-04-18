@@ -1,5 +1,5 @@
 package Utility;
-
+//sayli
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -8,13 +8,16 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import pageLibrary.Base;
 
-public class ListenerReporter implements ITestListener {
+
+public class ListenerReporter extends Base implements ITestListener {
 
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	
 	public void onTestStart(ITestResult result) {
+		test = extent.startTest(result.getName());
 		System.out.println(("-------ON TEST START : " + result.getName()+ "-------------"));
 		
 	}
@@ -28,7 +31,8 @@ public class ListenerReporter implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 	
 		System.out.println("----------ON TEST FAILURE : " + result.getMethod().getMethodName() + " --------------------");
-		test.log(LogStatus.FAIL,result.getMethod().getMethodName()+ " is Failed");
+		String screenshotPath = Screenshot.getScreenshot(result.getMethod().getMethodName());
+		test.log(LogStatus.FAIL,test.addScreenCapture(screenshotPath));
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -43,20 +47,26 @@ public class ListenerReporter implements ITestListener {
 	}
 
 	public void onStart(ITestContext context) {
-		System.out.println("--------ON START : " + context.getSuite().getName() + "--------------");
+		System.out.println(context.getSuite().getName());
 		if(extent ==null)
 		{
 		extent=new ExtentReports(System.getProperty("user.dir")+"\\Reports\\ListenersExtentReport.html", true);
 		}
-		test = extent.startTest("-------------Test started : "+context.getName()+"-------------");
+		//test = extent.startTest(context.getName());
 		
 	}
 
 	public void onFinish(ITestContext context) {
-		System.out.println(("----------ON FINISH : " +context.getSuite().getName()  + "-------------------"));
+		System.out.println((context.getSuite().getName()));
 		extent.endTest(test);
 		extent.flush();
-		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.close();
 	}
 
 }
