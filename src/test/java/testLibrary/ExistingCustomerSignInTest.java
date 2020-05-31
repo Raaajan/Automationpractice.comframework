@@ -46,12 +46,5 @@ public class ExistingCustomerSignInTest extends Base {
 		log.info("Sign in done");
 	}
 
-	@AfterTest
-	public void signout() {
-		signin.clickSignoutbtn();
-		log.info("Sign out done");
-		//driver.close();
-		//log.info("driver closed");
-	}
 
 }

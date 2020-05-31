@@ -22,8 +22,6 @@ public class ExistingCustomerSignIn extends Base {
 	@FindBy(id = "SubmitLogin")
 	WebElement submit;
 
-	@FindBy(xpath = "//a[@class='logout']")
-	WebElement signout;
 
 	// Initialise pagefactory
 
@@ -48,8 +46,5 @@ public class ExistingCustomerSignIn extends Base {
 		submit.click();
 	}
 
-	public void clickSignoutbtn() {
-		//Helper.exwait.until(ExpectedConditions.elementToBeClickable(signout));
-		signout.click();
-	}
+
 }
